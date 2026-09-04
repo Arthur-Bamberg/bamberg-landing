@@ -16,16 +16,22 @@ onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
 if (navToggle && navMobile) {
+  const label = navToggle.querySelector(".sr-only");
+
+  const setOpen = (open) => {
+    navToggle.setAttribute("aria-expanded", String(open));
+    navMobile.hidden = !open;
+    if (label) label.textContent = open ? "Fechar menu" : "Abrir menu";
+  };
+
   navToggle.addEventListener("click", () => {
     const open = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!open));
-    navMobile.hidden = open;
+    setOpen(!open);
   });
 
   navMobile.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      navToggle.setAttribute("aria-expanded", "false");
-      navMobile.hidden = true;
+      setOpen(false);
     });
   });
 }
