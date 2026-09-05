@@ -1,0 +1,33 @@
+---
+import { site } from "../site";
+---
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div class="footer-brand">
+      <img
+        src="/logo-bamberg.jpg"
+        alt={`Brasão BAMBERG — ${site.person} e ${site.company}`}
+        width="72"
+        height="72"
+      />
+      <div>
+        <p class="footer-name">{site.person}</p>
+        <p class="footer-company">{site.company}</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>
+        {site.industry}, {site.place} · CNPJ {site.cnpj} ·
+        <a href={`tel:${site.phoneTel}`}>{site.phone}</a>
+        ·
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+      <p class="footer-copy">
+        © <span data-year>{new Date().getFullYear()}</span>
+        {site.person} · {site.company}.
+        <a href="/rss.xml">RSS</a>
+      </p>
+    </div>
+  </div>
+</footer>

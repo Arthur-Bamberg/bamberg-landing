@@ -45,6 +45,7 @@ if (!reduceMotion) {
     { selector: ".strip-item", step: 80 },
     { selector: ".service", step: 90 },
     { selector: ".method-step", step: 100 },
+    { selector: ".post-item", step: 80 },
   ];
 
   staggerGroups.forEach(({ selector, step }) => {
@@ -61,7 +62,7 @@ if (!reduceMotion) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
   );
 
   reveals.forEach((el) => observer.observe(el));

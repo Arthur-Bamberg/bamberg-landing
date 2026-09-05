@@ -1,0 +1,47 @@
+---
+import { site } from "../site";
+
+interface Props {
+  current?: "home" | "blog";
+}
+
+const { current = "home" } = Astro.props;
+const prefix = current === "home" ? "" : "/";
+---
+
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="wordmark" href={current === "home" ? "#topo" : "/"}>
+      <span class="wordmark-person">{site.person}</span>
+      <span class="wordmark-company">{site.company}</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href={`${prefix}#sobre`}>Sobre</a>
+      <a href={`${prefix}#servicos`}>Serviços</a>
+      <a href={`${prefix}#metodo`}>Método</a>
+      <a class:list={[{ "is-current": current === "blog" }]} href="/blog">
+        Blog
+      </a>
+      <a class="btn btn-sm" href={`${prefix}#contato`}>Falar conosco</a>
+    </nav>
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-mobile"
+      data-nav-toggle
+    >
+      <span class="sr-only">Abrir menu</span>
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" data-nav-mobile hidden>
+    <a href={`${prefix}#sobre`}>Sobre</a>
+    <a href={`${prefix}#servicos`}>Serviços</a>
+    <a href={`${prefix}#metodo`}>Método</a>
+    <a href="/blog">Blog</a>
+    <a href={`${prefix}#contato`}>Falar conosco</a>
+  </div>
+</header>

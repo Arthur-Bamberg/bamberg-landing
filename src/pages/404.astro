@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../site";
+---
+
+<Base title={`Página não encontrada · ${site.person}`}>
+  <main id="conteudo">
+    <div class="shell not-found">
+      <h1>Página não encontrada</h1>
+      <p>
+        Esse endereço não existe. Volte para o site de {site.person} e da
+        {site.company}, ou leia o blog.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="/">Início</a>
+        <a class="btn btn-ghost" href="/blog">Blog</a>
+      </div>
+    </div>
+  </main>
+</Base>

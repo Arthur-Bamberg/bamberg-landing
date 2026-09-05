@@ -1,0 +1,69 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { formatDate, site } from "../../site";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) =>
+    import.meta.env.PROD ? data.draft !== true : true,
+  );
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base
+  current="blog"
+  lang={post.data.lang}
+  ogType="article"
+  title={`${post.data.title} · ${site.person}`}
+  description={post.data.description}
+>
+  <main id="conteudo">
+    <article class="shell">
+      <header class="post-header">
+        <a class="back-link" href="/blog">← Blog</a>
+        <p class="post-meta">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {formatDate(post.data.pubDate, post.data.lang)}
+          </time>
+          {
+            post.data.updatedDate && (
+              <>
+                {" "}
+                · atualizado em{" "}
+                <time datetime={post.data.updatedDate.toISOString()}>
+                  {formatDate(post.data.updatedDate, post.data.lang)}
+                </time>
+              </>
+            )
+          }
+        </p>
+        <h1>{post.data.title}</h1>
+        {
+          post.data.tags.length > 0 && (
+            <p class="tags">
+              {post.data.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </p>
+          )
+        }
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Base>
