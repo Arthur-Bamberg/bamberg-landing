@@ -6,7 +6,7 @@ export async function GET(context) {
   const posts = await getPublishedPosts();
 
   return rss({
-    title: `Blog · ${site.person}`,
+    title: `Blog · ${site.company}`,
     description: site.description,
     site: context.site,
     trailingSlash: false,

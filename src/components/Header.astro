@@ -7,6 +7,16 @@ interface Props {
 
 const { current = "home" } = Astro.props;
 const prefix = current === "home" ? "" : "/";
+
+const links = [
+  { href: `${prefix}#sobre`, label: "Sobre" },
+  { href: `${prefix}#missao`, label: "Missão" },
+  { href: `${prefix}#visao`, label: "Visão" },
+  { href: `${prefix}#valores`, label: "Valores" },
+  { href: `${prefix}#servicos`, label: "Serviços" },
+  { href: `${prefix}#metodo`, label: "Método" },
+  { href: "/blog", label: "Blog", current: current === "blog" },
+] as const;
 ---
 
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -14,16 +24,20 @@ const prefix = current === "home" ? "" : "/";
 <header class="site-header" data-header>
   <div class="shell header-inner">
     <a class="wordmark" href={current === "home" ? "#topo" : "/"}>
-      <span class="wordmark-person">{site.person}</span>
-      <span class="wordmark-company">{site.company}</span>
+      <span class="wordmark-name">{site.wordmarkTitle}</span>
+      <span class="wordmark-line">{site.wordmarkSubtitle}</span>
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href={`${prefix}#sobre`}>Sobre</a>
-      <a href={`${prefix}#servicos`}>Serviços</a>
-      <a href={`${prefix}#metodo`}>Método</a>
-      <a class:list={[{ "is-current": current === "blog" }]} href="/blog">
-        Blog
-      </a>
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[{ "is-current": "current" in link && link.current }]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
       <a class="btn btn-sm" href={`${prefix}#contato`}>Falar conosco</a>
     </nav>
     <button
@@ -38,10 +52,7 @@ const prefix = current === "home" ? "" : "/";
     </button>
   </div>
   <div class="nav-mobile" id="nav-mobile" data-nav-mobile hidden>
-    <a href={`${prefix}#sobre`}>Sobre</a>
-    <a href={`${prefix}#servicos`}>Serviços</a>
-    <a href={`${prefix}#metodo`}>Método</a>
-    <a href="/blog">Blog</a>
+    {links.map((link) => <a href={link.href}>{link.label}</a>)}
     <a href={`${prefix}#contato`}>Falar conosco</a>
   </div>
 </header>

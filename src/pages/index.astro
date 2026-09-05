@@ -17,11 +17,10 @@ import { site } from "../site";
         />
       </div>
       <div class="shell hero-copy">
-        <h1 class="hero-title reveal">{site.person}</h1>
-        <p class="hero-company reveal">{site.company}</p>
+        <h1 class="hero-title reveal">{site.company}</h1>
         <p class="hero-lead reveal">
           Tecnologia em Canoas, RS. Entendemos o seu problema para entregar a
-          melhor solução para o seu momento — desenvolvimento de software e
+          melhor solução para o seu momento: desenvolvimento de software e
           consultoria técnica, sem theater e sem stack por vaidade.
         </p>
         <div class="hero-actions reveal">
@@ -37,16 +36,16 @@ import { site } from "../site";
       </div>
     </section>
 
-    <section class="strip" aria-label="Quem somos">
+    <section class="strip" aria-label="Dados da empresa">
       <div class="shell strip-inner">
-        <p class="strip-item reveal">
-          <strong>{site.person}</strong> à frente
-        </p>
         <p class="strip-item reveal">
           <strong>{site.place}</strong> · {site.industry.toLowerCase()}
         </p>
         <p class="strip-item reveal">
           <strong>CNPJ</strong> {site.cnpj}
+        </p>
+        <p class="strip-item reveal">
+          <strong>Telefone</strong> {site.phone}
         </p>
       </div>
     </section>
@@ -54,39 +53,63 @@ import { site } from "../site";
     <section class="section approach" id="sobre">
       <div class="shell section-grid">
         <div class="section-intro reveal">
-          <h2>Primeiro o problema.<br />Depois a máquina.</h2>
+          <h2>Primeiro o problema.<br />Depois a solução.</h2>
         </div>
         <div class="approach-body reveal">
           <p>
-            {site.person} está à frente da {site.company}, empresa de
-            tecnologia registrada em {site.place}, feita para escutar o
-            contexto, cortar o ruído e avançar com o que realmente move o
-            negócio.
+            {site.company} é empresa de tecnologia registrada em {site.place},
+            feita para escutar o contexto, cortar o ruído e avançar com o que
+            realmente move o negócio.
           </p>
           <p>
             Desenvolvimento de software e consultoria técnica com foco em
-            resultado. Clareza, ritmo e entrega — alinhados ao que você
-            precisa agora.
+            resultado. Clareza, ritmo e entrega, alinhados ao que você precisa
+            agora.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="manifesto" id="maquina">
-      <div class="shell manifesto-inner reveal">
-        <p class="manifesto-line">pau na máquina</p>
-        <p class="manifesto-why">
-          Não é pressa e não é bravata. É não ter medo de fazer o que nunca
-          foi feito — confiando na experiência especializada da equipe para
-          encontrar o caminho, mesmo quando ainda não existe receita.
-        </p>
+    <section class="section mvv" id="missao">
+      <div class="shell section-grid">
+        <div class="section-intro reveal">
+          <h2>Missão</h2>
+        </div>
+        <div class="approach-body reveal">
+          <p>{site.mission}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vision-band" id="visao">
+      <div class="shell vision-inner reveal">
+        <h2>Visão</h2>
+        <p>{site.vision}</p>
+      </div>
+    </section>
+
+    <section class="section values" id="valores">
+      <div class="shell">
+        <div class="section-intro reveal">
+          <h2>Valores</h2>
+        </div>
+        <div class="value-list">
+          {
+            site.values.map((value) => (
+              <article class="value-item reveal">
+                <h3>{value.name}</h3>
+                <p>{value.detail}</p>
+              </article>
+            ))
+          }
+        </div>
       </div>
     </section>
 
     <section class="section services" id="servicos">
       <div class="shell">
         <div class="section-intro reveal">
-          <h2>O que colocamos pra rodar</h2>
+          <h2>O que fazemos</h2>
         </div>
 
         <div class="service-list">
@@ -94,8 +117,9 @@ import { site } from "../site";
             <div>
               <h3>Desenvolvimento de software</h3>
               <p>
-                Produtos, sistemas e integrações sob medida — do zero à
-                evolução contínua, com código limpo e entrega previsível.
+                Oferecemos produzir: produtos, sistemas e integrações sob
+                medida. Se for para ser construído, o Build é com a gente, do
+                zero à evolução contínua.
               </p>
             </div>
           </article>
@@ -103,8 +127,8 @@ import { site } from "../site";
             <div>
               <h3>Consultoria técnica</h3>
               <p>
-                Diagnóstico, arquitetura e decisões de engenharia para
-                destravar times, reduzir risco e acelerar o caminho certo.
+                Diagnóstico, arquitetura e a decisão de comprar ou construir,
+                para destravar times, reduzir risco e acelerar o caminho certo.
               </p>
             </div>
           </article>
@@ -124,7 +148,7 @@ import { site } from "../site";
     <section class="section method" id="metodo">
       <div class="shell">
         <div class="section-intro reveal">
-          <h2>Três movimentos. Zero enrolação.</h2>
+          <h2>Três movimentos</h2>
         </div>
 
         <ol class="method-track">
@@ -132,7 +156,7 @@ import { site } from "../site";
             <span class="method-num">1</span>
             <h3>Entender</h3>
             <p>
-              Mapeamos o problema real, as restrições e o momento do negócio —
+              Mapeamos o problema real, as restrições e o momento do negócio,
               antes de escrever uma linha.
             </p>
           </li>
@@ -140,16 +164,17 @@ import { site } from "../site";
             <span class="method-num">2</span>
             <h3>Desenhar</h3>
             <p>
-              Definimos a solução mais enxuta que resolve agora e deixa
-              espaço para crescer depois.
+              Definimos se o adequado é comprar ou construir, e desenhamos a
+              solução mais enxuta que resolve agora e deixa espaço para crescer
+              depois.
             </p>
           </li>
           <li class="method-step reveal">
             <span class="method-num">3</span>
             <h3>Entregar</h3>
             <p>
-              Executamos com ritmo, transparência e foco em eficiência — até
-              o resultado.
+              Quando o caminho é construir, executamos com ritmo,
+              transparência e foco em eficiência, até o resultado.
             </p>
           </li>
         </ol>
@@ -159,10 +184,10 @@ import { site } from "../site";
     <section class="cta-band" id="contato">
       <div class="shell cta-layout reveal">
         <div class="cta-inner">
-          <h2>Pronto para colocar a máquina pra trabalhar?</h2>
+          <h2>Pronto para resolver o problema certo?</h2>
           <p>
-            Conte o desafio. {site.person} e a {site.company} entendem o
-            contexto e propõem o caminho mais rápido até a solução certa.
+            Conte o desafio. {site.company} entende o contexto e propõe o
+            caminho mais rápido até a solução certa.
           </p>
           <div class="hero-actions">
             <a class="btn btn-light" href={`tel:${site.phoneTel}`}>
@@ -177,8 +202,7 @@ import { site } from "../site";
           </div>
         </div>
         <address class="contact-card">
-          <p class="contact-person">{site.person}</p>
-          <p class="contact-company">{site.company}</p>
+          <p class="contact-name">{site.company}</p>
           <ul class="contact-facts">
             <li>{site.industry} · {site.place}</li>
             <li>CNPJ {site.cnpj}</li>

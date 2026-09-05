@@ -44,6 +44,7 @@ if (!reduceMotion) {
   const staggerGroups = [
     { selector: ".strip-item", step: 80 },
     { selector: ".service", step: 90 },
+    { selector: ".value-item", step: 70 },
     { selector: ".method-step", step: 100 },
     { selector: ".post-item", step: 80 },
   ];

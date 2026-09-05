@@ -7,13 +7,12 @@ import { site } from "../site";
     <div class="footer-brand">
       <img
         src="/logo-bamberg.jpg"
-        alt={`Brasão BAMBERG — ${site.person} e ${site.company}`}
+        alt={`Brasão BAMBERG, ${site.company}`}
         width="72"
         height="72"
       />
       <div>
-        <p class="footer-name">{site.person}</p>
-        <p class="footer-company">{site.company}</p>
+        <p class="footer-name">{site.company}</p>
       </div>
     </div>
     <div class="footer-legal">
@@ -25,7 +24,7 @@ import { site } from "../site";
       </p>
       <p class="footer-copy">
         © <span data-year>{new Date().getFullYear()}</span>
-        {site.person} · {site.company}.
+        {site.company}.
         <a href="/rss.xml">RSS</a>
       </p>
     </div>

@@ -8,16 +8,16 @@ const posts = await getPublishedPosts();
 
 <Base
   current="blog"
-  title={`Blog · ${site.person}`}
-  description={`Notas de ${site.person} e da ${site.company} sobre software, consultoria e o trabalho de entender o problema antes da máquina.`}
+  title={`Blog · ${site.company}`}
+  description={`Notas da ${site.company} sobre software, consultoria e o trabalho de entender o problema antes da solução.`}
 >
   <main id="conteudo">
     <section class="page-hero">
       <div class="shell">
         <h1 class="reveal">Blog</h1>
         <p class="reveal">
-          {site.person} e a {site.company} — notas sobre engenharia,
-          consultoria e o ofício de entregar a solução certa para o momento.
+          Notas da {site.company} sobre engenharia, consultoria e o ofício de
+          entregar a solução certa para o momento.
         </p>
       </div>
     </section>

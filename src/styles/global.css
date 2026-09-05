@@ -150,7 +150,7 @@ p {
   min-width: 0;
 }
 
-.wordmark-person {
+.wordmark-name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.15rem;
@@ -158,20 +158,20 @@ p {
   line-height: 1.1;
 }
 
-.wordmark-company {
+.wordmark-line {
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--muted);
   line-height: 1.25;
-  max-width: min(58vw, 24rem);
+  max-width: min(58vw, 18rem);
 }
 
 .nav {
   display: none;
   align-items: center;
-  gap: 1.75rem;
-  font-size: 0.92rem;
+  gap: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -378,20 +378,11 @@ p {
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-size: clamp(1.85rem, 4.4vw, 3.2rem);
   font-weight: 700;
-  line-height: 1.02;
+  line-height: 1.06;
   letter-spacing: -0.03em;
-  margin-bottom: var(--space-1);
-}
-
-.hero-company {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
-  line-height: 1.25;
   margin-bottom: var(--space-3);
-  color: var(--ink-soft);
 }
 
 .hero-lead {
@@ -436,7 +427,7 @@ p {
   scroll-margin-top: calc(var(--header-h) + 0.75rem);
 }
 
-.manifesto,
+.vision-band,
 .cta-band {
   scroll-margin-top: calc(var(--header-h) + 0.75rem);
 }
@@ -469,7 +460,7 @@ p {
   font-weight: 500;
 }
 
-/* Services — editorial rows, not cards */
+/* Services: editorial rows, not cards */
 .service-list {
   border-top: 1px solid var(--line);
 }
@@ -535,31 +526,44 @@ p {
   max-width: 36ch;
 }
 
-/* Manifesto — slogan, mid-page, smaller than the old hero */
-.manifesto {
-  padding: var(--space-6) 0;
+.vision-band {
+  padding: var(--space-7) 0;
   background: var(--ink);
   color: var(--white);
 }
 
-.manifesto-inner {
-  max-width: 38rem;
+.vision-inner {
+  max-width: 40rem;
 }
 
-.manifesto-line {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 600;
-  font-size: clamp(2rem, 5vw, 3.15rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
+.vision-inner h2 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
   margin-bottom: var(--space-3);
 }
 
-.manifesto-why {
-  font-size: 1.12rem;
-  color: rgba(255, 255, 255, 0.88);
+.vision-inner p {
+  font-size: 1.14rem;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 48ch;
+}
+
+.value-list {
+  border-top: 1px solid var(--line);
+}
+
+.value-item {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.value-item h3 {
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  margin-bottom: 0.5rem;
+}
+
+.value-item p {
+  color: var(--muted);
+  max-width: 54ch;
 }
 
 /* CTA */
@@ -612,17 +616,11 @@ p {
   max-width: 28rem;
 }
 
-.contact-person {
+.contact-name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.35rem;
   letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
-}
-
-.contact-company {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.88);
   margin-bottom: var(--space-3);
 }
 
@@ -676,12 +674,8 @@ p {
   font-weight: 700;
   letter-spacing: 0.01em;
   font-size: 1.05rem;
-}
-
-.footer-company {
-  font-size: 0.88rem;
-  color: var(--muted);
-  margin-top: 0.15rem;
+  max-width: 18rem;
+  line-height: 1.25;
 }
 
 .footer-copy {
@@ -724,7 +718,8 @@ p {
 .service.reveal.is-in,
 .method-step.reveal.is-in,
 .strip-item.reveal.is-in,
-.post-item.reveal.is-in {
+.post-item.reveal.is-in,
+.value-item.reveal.is-in {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -797,20 +792,22 @@ p {
 }
 
 @media (min-width: 900px) {
-  .nav {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
   .hero-copy {
     padding-block: var(--space-7);
   }
 
   .service {
     padding-block: var(--space-4);
+  }
+}
+
+@media (min-width: 1180px) {
+  .nav {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
   }
 }
 
@@ -843,7 +840,7 @@ p {
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 12vw, 3.1rem);
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
   }
 
   .hero-actions {

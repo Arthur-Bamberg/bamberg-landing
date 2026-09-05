@@ -1,4 +1,4 @@
-# BAMBERG Landing — page overrides
+# BAMBERG Landing: page overrides
 
 Overrides the Master design system with brand colors from the official logo.
 
@@ -18,9 +18,9 @@ Do **not** use the navy/slate palette from the generic Master recommendation on 
 
 ## Identity
 
-The page presents the company only.
+The site presents the company only. Arthur Bamberg does not appear in chrome, landing, blog, 404, or RSS.
 
-- Company: Bamberg Desenvolvimento de Software
+- Company: A Bamberg Desenvolvimento de Software
 - Place: Canoas, RS (tecnologia)
 - CNPJ: 63.801.318/0001-91
 - Phone: (51) 9978-4248
@@ -30,15 +30,20 @@ Razão social, local, CNPJ, phone and email appear in contact and footer.
 
 ## Hero rules
 
-- Headline: Bamberg Desenvolvimento de Software
+- Headline: A Bamberg Desenvolvimento de Software
 - One supporting sentence about the problem and the offer
 - One CTA group (phone primary, email secondary) + dominant logo visual
 - No cards, badges, overlay chips, or slogan as the hero headline
 
-## Slogan
+## Missão, visão e valores
 
-“pau na máquina” lives mid-page, smaller than the old hero display. It is justified as not fearing work that has never been done before, trusting the team’s specialized experience.
+Three sections after Sobre, each linked from the header: Missão, Visão, Valores.
+Copy lives in `src/site.ts` and follows CONTEXT.md. No travessão in UI copy.
+
+## Header
+
+Sobre, Missão, Visão, Valores, Serviços, Método, Blog, Falar conosco.
 
 ## Language
 
-All UI copy in PT-BR.
+All UI copy in PT-BR. No travessão (em dash).
