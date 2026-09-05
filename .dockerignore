@@ -1,0 +1,13 @@
+.git
+.github
+.astro
+.impeccable
+node_modules
+dist
+docs
+design-system
+*.md
+.env*
+.DS_Store
+.vscode
+.idea

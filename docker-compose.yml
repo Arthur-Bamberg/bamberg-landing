@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    image: bamberg-landing:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
