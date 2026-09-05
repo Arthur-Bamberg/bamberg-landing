@@ -5,8 +5,8 @@ Identidade pública da empresa de tecnologia em Canoas, RS: o que ela existe par
 ## Language
 
 **Empresa**:
-A Bamberg Desenvolvimento de Software. Única identidade pública do site: chrome, landing, blog, 404 e RSS.
-_Avoid_: Arthur Bamberg anywhere in the public site, personal site framing, Arthur as subject of Missão, Visão or Valores
+Bamberg Desenvolvimento De Software. Nome de marca no chrome, hero, Sobre, contato e títulos. Razão social A Bamberg Desenvolvimento de Software só no rodapé (copyright) e nos dados legais.
+_Avoid_: “A Bamberg” as brand, Arthur Bamberg anywhere in the public site, personal site framing, Arthur as subject of Missão, Visão or Valores, stacked title plus “Desenvolvimento de Software” as subtitle
 
 **Missão**:
 Levar a Pessoas e a empresas a tecnologia que melhor se adequa a elas, comprada ou construída, resolvendo problemas reais com Inteligência, humana ou de IA.

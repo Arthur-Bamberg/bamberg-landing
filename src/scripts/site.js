@@ -36,37 +36,3 @@ if (navToggle && navMobile) {
   });
 }
 
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (!reduceMotion) {
-  const reveals = document.querySelectorAll(".reveal");
-
-  const staggerGroups = [
-    { selector: ".strip-item", step: 80 },
-    { selector: ".service", step: 90 },
-    { selector: ".value-item", step: 70 },
-    { selector: ".method-step", step: 100 },
-    { selector: ".post-item", step: 80 },
-  ];
-
-  staggerGroups.forEach(({ selector, step }) => {
-    document.querySelectorAll(selector).forEach((el, i) => {
-      el.style.setProperty("--reveal-delay", `${i * step}ms`);
-    });
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-in");
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
-  );
-
-  reveals.forEach((el) => observer.observe(el));
-} else {
-  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
-}

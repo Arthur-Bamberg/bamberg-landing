@@ -1,7 +1,6 @@
 export const site = {
+  brand: "Bamberg Desenvolvimento De Software",
   company: "A Bamberg Desenvolvimento de Software",
-  wordmarkTitle: "A Bamberg",
-  wordmarkSubtitle: "Desenvolvimento de Software",
   place: "Canoas, RS",
   industry: "Tecnologia",
   cnpj: "63.801.318/0001-91",
@@ -9,9 +8,9 @@ export const site = {
   phoneTel: "+555199784248",
   email: "atendimento@bambergsoftware.com",
   url: "https://bambergsoftware.com",
-  title: "A Bamberg Desenvolvimento de Software",
+  title: "Bamberg Desenvolvimento De Software",
   description:
-    "A Bamberg Desenvolvimento de Software: desenvolvimento e consultoria técnica em Canoas, RS. Entendemos o problema para entregar a melhor solução do seu momento.",
+    "Bamberg Desenvolvimento De Software: desenvolvimento e consultoria técnica em Canoas, RS. Entendemos o problema para entregar a melhor solução do seu momento.",
   mission:
     "Levar a pessoas e a empresas a tecnologia que melhor se adequa a elas, comprada ou construída, resolvendo problemas reais com inteligência, humana ou de IA.",
   vision:

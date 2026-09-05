@@ -17,11 +17,11 @@ import { site } from "../site";
         />
       </div>
       <div class="shell hero-copy">
-        <h1 class="hero-title reveal">{site.company}</h1>
+        <h1 class="hero-title reveal">{site.brand}</h1>
         <p class="hero-lead reveal">
           Tecnologia em Canoas, RS. Entendemos o seu problema para entregar a
-          melhor solução para o seu momento: desenvolvimento de software e
-          consultoria técnica, sem theater e sem stack por vaidade.
+          tecnologia que melhor se adequa ao seu momento: desenvolvimento de
+          software e consultoria técnica, comprada ou construída.
         </p>
         <div class="hero-actions reveal">
           <a class="btn" href={`tel:${site.phoneTel}`}>Ligar {site.phone}</a>
@@ -31,7 +31,6 @@ import { site } from "../site";
           >
             {site.email}
           </a>
-          <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
         </div>
       </div>
     </section>
@@ -45,7 +44,8 @@ import { site } from "../site";
           <strong>CNPJ</strong> {site.cnpj}
         </p>
         <p class="strip-item reveal">
-          <strong>Telefone</strong> {site.phone}
+          <strong>Telefone</strong>
+          <a href={`tel:${site.phoneTel}`}>{site.phone}</a>
         </p>
       </div>
     </section>
@@ -57,9 +57,9 @@ import { site } from "../site";
         </div>
         <div class="approach-body reveal">
           <p>
-            {site.company} é empresa de tecnologia registrada em {site.place},
+            {site.brand} é empresa de tecnologia registrada em {site.place},
             feita para escutar o contexto, cortar o ruído e avançar com o que
-            realmente move o negócio.
+            realmente resolve o problema.
           </p>
           <p>
             Desenvolvimento de software e consultoria técnica com foco em
@@ -118,7 +118,7 @@ import { site } from "../site";
               <h3>Desenvolvimento de software</h3>
               <p>
                 Oferecemos produzir: produtos, sistemas e integrações sob
-                medida. Se for para ser construído, o Build é com a gente, do
+                medida. Se for para ser construído, o Build é da empresa, do
                 zero à evolução contínua.
               </p>
             </div>
@@ -128,7 +128,7 @@ import { site } from "../site";
               <h3>Consultoria técnica</h3>
               <p>
                 Diagnóstico, arquitetura e a decisão de comprar ou construir,
-                para destravar times, reduzir risco e acelerar o caminho certo.
+                para quem precisa reduzir risco e escolher o caminho certo.
               </p>
             </div>
           </article>
@@ -156,8 +156,8 @@ import { site } from "../site";
             <span class="method-num">1</span>
             <h3>Entender</h3>
             <p>
-              Mapeamos o problema real, as restrições e o momento do negócio,
-              antes de escrever uma linha.
+              Mapeamos o problema real, as restrições e o momento de quem
+              precisa, antes de escrever uma linha.
             </p>
           </li>
           <li class="method-step reveal">
@@ -186,8 +186,8 @@ import { site } from "../site";
         <div class="cta-inner">
           <h2>Pronto para resolver o problema certo?</h2>
           <p>
-            Conte o desafio. {site.company} entende o contexto e propõe o
-            caminho mais rápido até a solução certa.
+            Conte o desafio. {site.brand} entende o contexto e propõe o
+            caminho adequado até a solução certa.
           </p>
           <div class="hero-actions">
             <a class="btn btn-light" href={`tel:${site.phoneTel}`}>
@@ -202,7 +202,7 @@ import { site } from "../site";
           </div>
         </div>
         <address class="contact-card">
-          <p class="contact-name">{site.company}</p>
+          <p class="contact-name">{site.brand}</p>
           <ul class="contact-facts">
             <li>{site.industry} · {site.place}</li>
             <li>CNPJ {site.cnpj}</li>
